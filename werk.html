@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Oops...? 🦖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #e4ffe8, #f9fff9);
+      font-family: 'Quicksand', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      animation: fadeIn 1.5s ease-in;
+      text-align: center;
+      position: relative;
+    }
+
+    .emoji {
+      font-size: 6em;
+      animation: float 3s ease-in-out infinite;
+      margin-bottom: 20px;
+      z-index: 2;
+    }
+
+    h2 {
+      font-size: 2em;
+      color: #446644;
+      margin-bottom: 10px;
+      animation: pop 1s ease-out forwards;
+    }
+
+    .fake-message {
+      font-size: 1.2em;
+      color: #888;
+      animation: fadeInText 2s ease-in-out;
+    }
+
+    .real-link {
+      display: none;
+      margin-top: 40px;
+      animation: fadeInButton 1s ease-in-out forwards;
+    }
+
+    .real-link a {
+      padding: 12px 28px;
+      background: #7adba6;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 25px;
+      font-size: 1.1em;
+      transition: background 0.3s, transform 0.3s;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      display: inline-block;
+      animation: pop 0.6s ease-in-out;
+    }
+
+    .real-link a:hover {
+      background: #5ac994;
+      transform: scale(1.1) rotate(-2deg);
+    }
+
+    /* Floating dino background */
+    .floaty-dino {
+      position: absolute;
+      font-size: 2em;
+      opacity: 0.3;
+      animation: floatRandom 6s infinite ease-in-out;
+      pointer-events: none;
+    }
+
+    .floaty-dino:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+    .floaty-dino:nth-child(2) { top: 80%; left: 90%; animation-delay: 1s; }
+    .floaty-dino:nth-child(3) { top: 50%; left: 10%; animation-delay: 2s; }
+    .floaty-dino:nth-child(4) { top: 20%; left: 70%; animation-delay: 3s; }
+    .floaty-dino:nth-child(5) { top: 60%; left: 30%; animation-delay: 4s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes floatRandom {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(10deg); }
+      100% { transform: translateY(0) rotate(0deg); }
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.6); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes fadeInText {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInButton {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="emoji">🦕</div>
+  <h2>oh no.....noel lari bawak hadiah</h2>
+  <div class="fake-message">kejarrrrrr! 🦖</div>
+
+  <div class="real-link" id="realLink">
+    <p style="color:#666;">heheh gurau 😜</p>
+    <a href="real.html">click here ye cet!</a>
+  </div>
+
+  <!-- Floating background dino emojis -->
+  <div class="floaty-dino">🦖</div>
+  <div class="floaty-dino">🦕</div>
+  <div class="floaty-dino">🦖</div>
+  <div class="floaty-dino">🦕</div>
+  <div class="floaty-dino">🦖</div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('realLink').style.display = 'block';
+    }, 4000); // Show the real link after 4s
+  </script>
+
+</body>
+</html>
